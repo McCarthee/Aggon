@@ -1,0 +1,71 @@
+[
+    {
+        "name": "Ascension",
+        "path": "C:/Games/Ascension Launcher/resources/epoch_live/Interface/Addons",
+        "addons": [
+            {
+                "name": "ElvUI-Epoch",
+                "url": "https://github.com/Bennylavaa/ElvUI-Epoch",
+                "ignore": [ "README.md", ".gitattributes" ]
+            },
+            {
+                "name": "ElvUI_AddOnSkins",
+                "url": "https://github.com/ElvUI-WotLK/ElvUI_AddOnSkins",
+                "ignore": [ "README.md", ".gitattributes" ]
+            },
+            {
+                "name": "ElvUI_SwingBar",
+                "url": "https://github.com/ElvUI-WotLK/ElvUI_SwingBar",
+                "ignore": [ "README.md", ".gitattributes" ]
+            },
+            {
+                "name": "pfQuest-wotlk",
+                "url": "https://github.com/shagu/pfQuest",
+                "folder": "pfQuest-wotlk",
+                "ignore": [ "README.md", ".gitattributes", ".github", "LICENSE" ]
+            },
+            {
+                "name": "pfQuest-epoch",
+                "url": "https://github.com/Bennylavaa/pfQuest-epoch",
+                "folder": "pfQuest-epoch",
+                "ignore": [ "README.md", "LICENSE", ".github" ],
+                "tag": "1.15"
+            },
+            {
+                "name": "AdiBags",
+                "url": "https://github.com/Sattva-108/AdiBags",
+                "folder": "AdiBags",
+                "ignore": [ "README.md", ".gitattributes" ]
+            },
+            {
+                "name": "AdiBags-WoTLK-3.3.5-Mods",
+                "url": "https://github.com/Sattva-108/AdiBags-WoTLK-3.3.5-Mods",
+                "ignore": [ "README.md", ".gitattributes" ]
+            },
+            {
+                "name": "LFG",
+                "url": "https://github.com/Bennylavaa/LFG",
+                "folder": "LFG",
+                "ignore": [ "README.md" ]
+            },
+            {
+                "name": "Magnify-WotLK",
+                "url": "https://github.com/rissole/Magnify-WotLK",
+                "folder": "Magnify-WotLK",
+                "ignore": [ "README.md", "LICENSE" ]
+            },
+            {
+                "name": "WhatsTraining_WotLK",
+                "url": "https://github.com/anhility/WhatsTraining_WotLK",
+                "folder": "WhatsTraining_WotLK",
+                "ignore": [ "LICENSE", "README.rst" ]
+            },
+            {
+                "name": "Postal",
+                "url": "https://github.com/Bennylavaa/Postal",
+                "folder": "Postal",
+                "ignore": [ ".gitattributes" ]
+            }
+        ]
+    }
+]
