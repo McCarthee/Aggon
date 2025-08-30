@@ -4,11 +4,11 @@ A simple, interactive addon manager for World of Warcraft.
 
 ## 🚀 Quick Start
 
-1. **Download/Compile**:
+1. **Compile**:
 
-    ```bash
-    go build -o aggon.exe main.go
-    ```
+   ```bash
+   go build -o aggon.exe main.go
+   ```
 
 2. **Run**:
 
