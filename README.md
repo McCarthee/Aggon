@@ -25,6 +25,12 @@ AGGON comes in two versions:
 
 ### For New Users (Recommended: v2 Declarative)
 
+First, compile the project:
+```bash
+go build -o aggon.exe main.go types.go store.go generations.go reconcile.go
+```
+
+Then initialize:
 ```bash
 # Initialize declarative configuration
 ./aggon.exe init
