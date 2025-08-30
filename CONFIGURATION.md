@@ -1,6 +1,6 @@
-# 📝 AGGON v2 Configuration Reference
+# 📝 AGGON Configuration Reference
 
-Complete reference for declarative configuration in AGGON v2.
+Complete reference for declarative configuration in AGGON.
 
 ## 🏗️ Schema Overview
 
@@ -557,7 +557,7 @@ Paths can be relative or absolute:
 
 ### Required Fields
 
-AGGON v2 validates your configuration and will report errors for:
+AGGON validates your configuration and will report errors for:
 
 -   Missing required fields
 -   Invalid schema version
@@ -624,83 +624,6 @@ aggon plan --verbose
 ```
 
 ---
-
-## 🔄 Migration from v1
-
-### Automatic Conversion Tool (Future)
-
-```bash
-# Convert v1 config to v2 (planned feature)
-aggon migrate config.json
-```
-
-### Manual Conversion
-
-1. **Start with init:**
-
-    ```bash
-    aggon init
-    ```
-
-2. **Map v1 structure to v2:**
-
-    **v1 config.json:**
-
-    ```json
-    [
-        {
-            "name": "Retail",
-            "path": "/path/to/retail/AddOns",
-            "addons": [
-                {
-                    "name": "ElvUI",
-                    "url": "https://github.com/ElvUI-WotLK/ElvUI",
-                    "folder": "ElvUI",
-                    "ignore": ["README.md"]
-                }
-            ]
-        }
-    ]
-    ```
-
-    **v2 aggon.json:**
-
-    ```json
-    {
-        "schema": "aggon/v2",
-        "metadata": { "name": "migrated-config", "version": "1.0.0" },
-        "installations": {
-            "retail": {
-                "type": "retail",
-                "path": "/path/to/retail/AddOns",
-                "enabled": true,
-                "addons": ["elvui"]
-            }
-        },
-        "addons": {
-            "elvui": {
-                "source": {
-                    "type": "github",
-                    "url": "https://github.com/ElvUI-WotLK/ElvUI",
-                    "ref": "main"
-                },
-                "version": "latest",
-                "compatible": ["retail"],
-                "folder": "ElvUI",
-                "ignore": ["README.md"]
-            }
-        },
-        "profiles": {},
-        "settings": {
-            "auto_update": false,
-            "backup_generations": 10,
-            "parallel_downloads": 3,
-            "verify_hashes": true,
-            "store_path": ".aggon/store",
-            "generations_path": ".aggon/generations"
-        }
-    }
-    ```
 
 ---
 

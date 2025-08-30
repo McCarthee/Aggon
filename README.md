@@ -1,21 +1,17 @@
-# 🏺 AGGON - World of Warcraft Addon Manager
+# 🏺 AGGON - Declarative WoW Addon Manager
 
-A modern, declarative addon manager for World of Warcraft, inspired by NixOS principles.
+A revolutionary declarative addon manager for World of Warcraft, inspired by NixOS principles.
 
 ## 🎯 Overview
 
-AGGON comes in two versions:
-
--   **AGGON v1** (Classic): Traditional imperative addon management
--   **AGGON v2** (Declarative): Revolutionary declarative system with atomic operations and rollbacks
+AGGON provides a declarative approach to World of Warcraft addon management with atomic operations, generation-based rollbacks, and reproducible configurations.
 
 ## 📋 Table of Contents
 
 -   [Quick Start](#-quick-start)
--   [AGGON v1 (Classic)](#-aggon-v1-classic)
--   [AGGON v2 (Declarative)](#-aggon-v2-declarative)
--   [Migration Guide](#-migration-guide)
--   [Configuration Reference](#-configuration-reference)
+-   [Core Concepts](#-core-concepts)
+-   [Configuration Guide](#-configuration-guide)
+-   [Advanced Usage](#-advanced-usage)
 -   [Troubleshooting](#-troubleshooting)
 -   [Contributing](#-contributing)
 
@@ -23,7 +19,7 @@ AGGON comes in two versions:
 
 ## 🚀 Quick Start
 
-### For New Users (Recommended: v2 Declarative)
+### Getting Started
 
 First, compile the project:
 ```bash
@@ -45,67 +41,11 @@ Then initialize:
 ./aggon.exe switch
 ```
 
-### For Existing Users (v1 Classic)
-
-```bash
-# Run interactive menu
-./aggon.exe
-
-# Or use command line
-./aggon.exe add addon
-./aggon.exe add path
-```
-
 ---
 
-## 🏛️ AGGON v1 (Classic)
 
-The traditional imperative addon manager with interactive menus.
 
-### Features
-
--   ✅ Interactive menu system
--   ✅ GitHub integration with caching
--   ✅ Basic backup system
--   ✅ Multi-installation support
--   ✅ Clean progress display
-
-### Usage
-
-```bash
-# Interactive mode
-./aggon.exe
-
-# Command line mode
-./aggon.exe add addon          # Add new addon
-./aggon.exe add path           # Add installation path
-./aggon.exe format-config      # Format configuration
-./aggon.exe --help             # Show help
-```
-
-### Configuration (config.json)
-
-```json
-[
-    {
-        "name": "Ascension",
-        "path": "C:/Games/Ascension/Interface/Addons",
-        "addons": [
-            {
-                "name": "ElvUI-Epoch",
-                "url": "https://github.com/Bennylavaa/ElvUI-Epoch",
-                "ignore": ["README.md", ".gitattributes"]
-            }
-        ]
-    }
-]
-```
-
----
-
-## 🧬 AGGON v2 (Declarative)
-
-A revolutionary declarative system inspired by NixOS principles.
+## 🧬 Core Concepts
 
 ### Philosophy
 
@@ -188,7 +128,7 @@ aggon help
 
 ---
 
-## 📝 Configuration Guide (v2 Declarative)
+## 📝 Configuration Guide
 
 ### Complete Configuration Example
 
@@ -350,53 +290,6 @@ Global system settings:
 
 ---
 
-## 🔄 Migration Guide
-
-### From AGGON v1 to v2
-
-1. **Initialize v2 configuration:**
-
-    ```bash
-    ./aggon.exe init
-    ```
-
-2. **Convert your v1 config manually:**
-
-    - Copy addon definitions from `config.json`
-    - Restructure according to v2 schema
-    - Define installations and profiles
-
-3. **Test the configuration:**
-
-    ```bash
-    ./aggon.exe plan
-    ```
-
-4. **Apply when ready:**
-    ```bash
-    ./aggon.exe switch
-    ```
-
-### From Manual Management
-
-1. **Document current setup:**
-
-    - List all installed addons
-    - Note their sources (GitHub URLs)
-    - Document any custom configurations
-
-2. **Create declarative config:**
-
-    - Use the configuration guide above
-    - Define all your addons and installations
-
-3. **Test before applying:**
-    ```bash
-    ./aggon.exe plan
-    ```
-
----
-
 ## 🛠️ Advanced Usage
 
 ### Working with Profiles
@@ -530,22 +423,6 @@ aggon plan --debug
 
 ---
 
-## 📊 Comparison: v1 vs v2
-
-| Feature               | AGGON v1              | AGGON v2             |
-| --------------------- | --------------------- | -------------------- |
-| **Configuration**     | Imperative            | Declarative          |
-| **Updates**           | In-place modification | Immutable + symlinks |
-| **Rollback**          | Basic backups         | Instant generations  |
-| **Reproducibility**   | Limited               | Complete             |
-| **Multi-environment** | Manual                | Profiles             |
-| **State Management**  | Mutable               | Immutable            |
-| **Recovery**          | Manual restore        | Atomic rollback      |
-| **Deduplication**     | None                  | Automatic            |
-| **Integrity**         | Basic                 | SHA256 verified      |
-
----
-
 ## 🎯 Best Practices
 
 ### Configuration Management
@@ -578,7 +455,6 @@ aggon plan --debug
 ```bash
 git clone <repo>
 cd aggon
-git checkout declarative-v2
 go build -o aggon.exe main.go types.go store.go generations.go reconcile.go
 ```
 
@@ -590,7 +466,7 @@ go test ./...
 
 ### Adding Features
 
-1. Create feature branch from `declarative-v2`
+1. Create feature branch from `main`
 2. Implement changes
 3. Add tests
 4. Submit pull request

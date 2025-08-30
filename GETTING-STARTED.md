@@ -1,4 +1,4 @@
-# 🚀 Getting Started with AGGON v2
+# 🚀 Getting Started with AGGON
 
 A step-by-step guide to set up and use the declarative AGGON addon manager.
 
@@ -18,7 +18,7 @@ A step-by-step guide to set up and use the declarative AGGON addon manager.
 # Or compile from source:
 git clone <repo>
 cd aggon
-git checkout declarative-v2
+git checkout main
 go build -o aggon.exe main.go types.go store.go generations.go reconcile.go
 ```
 
