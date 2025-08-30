@@ -1,4 +1,4 @@
-# 🏺 AGGON v1 - Classic WoW Addon Manager
+# 🏺 AGGON - Classic WoW Addon Manager
 
 A simple, interactive addon manager for World of Warcraft.
 
@@ -37,18 +37,9 @@ A simple, interactive addon manager for World of Warcraft.
 -   Go 1.21+ (for compilation)
 -   World of Warcraft installation(s)
 
-## 🔗 Versions
-
--   **🏛️ v1 (Classic)** - You are here! Interactive, menu-driven system
--   **🧬 v2 (Declarative)** - [Switch to declarative-v2 branch](../../tree/declarative-v2) for the advanced declarative system
-
 ## 📚 Documentation
 
-See the [declarative-v2 branch](../../tree/declarative-v2) for comprehensive documentation including:
-
--   Complete feature comparison
--   Migration guides
--   Advanced configuration options
+For detailed configuration and advanced features, see the included documentation files.
 
 ## 🤝 Contributing
 
@@ -63,4 +54,4 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 ---
 
-_Looking for more advanced features? Check out [AGGON v2](../../tree/declarative-v2) with NixOS-inspired declarative configuration!_
+_Simple, reliable, and effective addon management for World of Warcraft!_
