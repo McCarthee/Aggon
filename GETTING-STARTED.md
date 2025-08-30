@@ -19,21 +19,21 @@ A step-by-step guide to set up and use the declarative AGGON addon manager.
 git clone <repo>
 cd aggon
 git checkout declarative-v2
-go build -o aggon-declarative.exe main-declarative.go types.go store.go generations.go reconcile.go
+go build -o aggon.exe main.go types.go store.go generations.go reconcile.go
 ```
 
 ### Step 2: Initialize Configuration
 
 ```bash
 # Create initial configuration
-./aggon-declarative.exe init
+./aggon.exe init
 ```
 
-This creates `aggon-declarative.json` with basic settings.
+This creates `config.json` with basic settings.
 
 ### Step 3: Configure Your Setup
 
-Edit `aggon-declarative.json` to match your WoW installations:
+Edit `config.json` to match your WoW installations:
 
 ```json
 {
@@ -79,7 +79,7 @@ Edit `aggon-declarative.json` to match your WoW installations:
 
 ```bash
 # Preview what would happen
-./aggon-declarative.exe plan
+./aggon.exe plan
 ```
 
 Expected output:
@@ -100,7 +100,7 @@ Expected output:
 
 ```bash
 # Apply the configuration
-./aggon-declarative.exe switch
+./aggon.exe switch
 ```
 
 Expected output:
@@ -197,8 +197,8 @@ Warmane: C:/Warmane/Data/Interface/AddOns
 4. **Test and apply:**
 
 ```bash
-./aggon-declarative.exe plan
-./aggon-declarative.exe switch
+./aggon.exe plan
+./aggon.exe switch
 ```
 
 ---
@@ -241,13 +241,13 @@ Profiles let you switch between different configurations.
 
 ```bash
 # Switch to raiding profile
-./aggon-declarative.exe switch --profile raiding
+./aggon.exe switch --profile raiding
 
 # Switch to testing profile
-./aggon-declarative.exe switch --profile testing
+./aggon.exe switch --profile testing
 
 # Return to default configuration
-./aggon-declarative.exe switch
+./aggon.exe switch
 ```
 
 ---
@@ -260,7 +260,7 @@ Every configuration change creates a new "generation" - a complete snapshot of y
 
 ```bash
 # List all generations
-./aggon-declarative.exe generations list
+./aggon.exe generations list
 ```
 
 Output:
@@ -277,23 +277,23 @@ Output:
 
 ```bash
 # Rollback to previous generation
-./aggon-declarative.exe rollback
+./aggon.exe rollback
 
 # Rollback to specific generation
-./aggon-declarative.exe rollback 2
+./aggon.exe rollback 2
 
 # View what generation 2 contained
-./aggon-declarative.exe generations show 2
+./aggon.exe generations show 2
 ```
 
 ### Cleaning Up
 
 ```bash
 # Keep only last 5 generations
-./aggon-declarative.exe gc --keep 5
+./aggon.exe gc --keep 5
 
 # Force cleanup including current
-./aggon-declarative.exe gc --force
+./aggon.exe gc --force
 ```
 
 ---
@@ -304,13 +304,13 @@ Output:
 
 ```bash
 # Check what would update
-./aggon-declarative.exe plan
+./aggon.exe plan
 
 # Apply updates if satisfied
-./aggon-declarative.exe switch
+./aggon.exe switch
 
 # If something breaks, rollback
-./aggon-declarative.exe rollback
+./aggon.exe rollback
 ```
 
 ### Adding New Installation
@@ -351,8 +351,8 @@ Output:
 3. **Test and apply:**
 
 ```bash
-./aggon-declarative.exe plan
-./aggon-declarative.exe switch
+./aggon.exe plan
+./aggon.exe switch
 ```
 
 ### Switching Between Stable and Beta
@@ -389,13 +389,13 @@ Output:
 
 ```bash
 # Switch to stable
-./aggon-declarative.exe switch --profile stable
+./aggon.exe switch --profile stable
 
 # Switch to beta for testing
-./aggon-declarative.exe switch --profile beta
+./aggon.exe switch --profile beta
 
 # Rollback if beta has issues
-./aggon-declarative.exe rollback
+./aggon.exe rollback
 ```
 
 ---
@@ -424,7 +424,7 @@ Output:
 
     ```bash
     # Right-click command prompt → "Run as administrator"
-    ./aggon-declarative.exe switch
+    ./aggon.exe switch
     ```
 
 2. Enable Developer Mode (Windows 10/11):
@@ -470,7 +470,7 @@ Output:
 
     ```bash
     rm -rf .aggon/store
-    ./aggon-declarative.exe switch
+    ./aggon.exe switch
     ```
 
 2. Update hash in configuration:
@@ -586,9 +586,9 @@ Output:
 
 ```bash
 # Always review before applying
-./aggon-declarative.exe plan
+./aggon.exe plan
 # Read the output carefully
-./aggon-declarative.exe switch
+./aggon.exe switch
 ```
 
 ---
@@ -599,7 +599,7 @@ Output:
 
 ```bash
 git init
-git add aggon-declarative.json
+git add aggon.json
 git commit -m "Initial AGGON configuration"
 ```
 
@@ -607,10 +607,10 @@ git commit -m "Initial AGGON configuration"
 
 ```bash
 # Create backup
-cp aggon-declarative.json aggon-declarative.json.backup
+cp aggon.json aggon.json.backup
 
 # Test changes
-./aggon-declarative.exe plan
+./aggon.exe plan
 
 # Apply if good, restore if bad
 ```

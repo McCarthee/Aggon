@@ -300,10 +300,10 @@ Profiles can override specific addon settings:
 
 ```bash
 # Switch to specific profile
-aggon-declarative switch --profile development
+aggon switch --profile development
 
 # Plan with profile
-aggon-declarative plan --profile full
+aggon plan --profile full
 ```
 
 ---
@@ -570,13 +570,13 @@ AGGON v2 validates your configuration and will report errors for:
 
 ```bash
 # Validate configuration without applying
-aggon-declarative plan
+aggon plan
 
 # Test configuration
-aggon-declarative test
+aggon test
 
 # Verbose validation
-aggon-declarative plan --verbose
+aggon plan --verbose
 ```
 
 ### Common Validation Errors
@@ -631,7 +631,7 @@ aggon-declarative plan --verbose
 
 ```bash
 # Convert v1 config to v2 (planned feature)
-aggon-declarative migrate config.json
+aggon migrate config.json
 ```
 
 ### Manual Conversion
@@ -639,7 +639,7 @@ aggon-declarative migrate config.json
 1. **Start with init:**
 
     ```bash
-    aggon-declarative init
+    aggon init
     ```
 
 2. **Map v1 structure to v2:**
@@ -663,7 +663,7 @@ aggon-declarative migrate config.json
     ]
     ```
 
-    **v2 aggon-declarative.json:**
+    **v2 aggon.json:**
 
     ```json
     {

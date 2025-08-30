@@ -73,7 +73,7 @@ config.json ──► Interactive Menu ──► Direct File Operations
 ### AGGON v2: Declarative Architecture
 
 ```
-aggon-declarative.json ──► Build Plan ──► Content Store ──► Symlink Farm
+aggon.json ──► Build Plan ──► Content Store ──► Symlink Farm
             │                  │              │               │
             │                  │              │               ▼
             │                  │              │       WoW/Interface/AddOns/
@@ -155,11 +155,11 @@ Enter choice: 1
 ### AGGON v2: Declarative Experience
 
 ```bash
-$ ./aggon-declarative.exe init
+$ ./aggon.exe init
 🎉 Initializing declarative AGGON...
-✅ Created aggon-declarative.json
+✅ Created aggon.json
 
-$ ./aggon-declarative.exe plan
+$ ./aggon.exe plan
 🔄 Creating execution plan...
 📋 Execution Plan
 =================
@@ -172,7 +172,7 @@ $ ./aggon-declarative.exe plan
    + Install elvui in retail
    + Install weakauras in retail
 
-$ ./aggon-declarative.exe switch
+$ ./aggon.exe switch
 ⚡ Applying changes...
 ✅ Successfully applied configuration!
    Generation: 1
@@ -228,7 +228,7 @@ $ ./aggon-declarative.exe switch
 
 ### AGGON v2 Configuration
 
-**File: aggon-declarative.json**
+**File: aggon.json**
 
 ```json
 {
@@ -317,27 +317,27 @@ $ ./aggon-declarative.exe switch
 ### AGGON v2 Workflow
 
 ```
-1. Create/edit aggon-declarative.json
-2. Plan changes: ./aggon-declarative.exe plan
-3. Apply changes: ./aggon-declarative.exe switch
+1. Create/edit aggon.json
+2. Plan changes: ./aggon.exe plan
+3. Apply changes: ./aggon.exe switch
 4. Automatic generation created
-5. Rollback if needed: ./aggon-declarative.exe rollback
+5. Rollback if needed: ./aggon.exe rollback
 ```
 
 **Typical Day:**
 
 ```bash
 # Edit configuration file
-vim aggon-declarative.json
+vim aggon.json
 
 # Preview changes
-./aggon-declarative.exe plan
+./aggon.exe plan
 
 # Apply if satisfied
-./aggon-declarative.exe switch
+./aggon.exe switch
 
 # Or rollback if issues
-./aggon-declarative.exe rollback
+./aggon.exe rollback
 ```
 
 ---
@@ -482,17 +482,17 @@ Network Usage:    Optimized   (smart caching, deduplication)
 cp config.json config-v1-backup.json
 
 # Initialize v2
-./aggon-declarative.exe init
+./aggon.exe init
 
 # Manually convert configuration
 # (automatic converter planned for future)
 
 # Test v2 setup
-./aggon-declarative.exe plan
-./aggon-declarative.exe switch --test
+./aggon.exe plan
+./aggon.exe switch --test
 
 # Apply when ready
-./aggon-declarative.exe switch
+./aggon.exe switch
 ```
 
 ### From Manual to Either Version
@@ -510,8 +510,8 @@ cp config.json config-v1-backup.json
 1. Document current addon sources
 2. Create declarative configuration
 3. Define installations and addons
-4. Test with `./aggon-declarative.exe plan`
-5. Apply with `./aggon-declarative.exe switch`
+4. Test with `./aggon.exe plan`
+5. Apply with `./aggon.exe switch`
 
 ---
 

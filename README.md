@@ -27,16 +27,16 @@ AGGON comes in two versions:
 
 ```bash
 # Initialize declarative configuration
-./aggon-declarative.exe init
+./aggon.exe init
 
 # Edit the generated configuration
 # (See Configuration Guide below)
 
 # Preview changes
-./aggon-declarative.exe plan
+./aggon.exe plan
 
 # Apply configuration
-./aggon-declarative.exe switch
+./aggon.exe switch
 ```
 
 ### For Existing Users (v1 Classic)
@@ -156,28 +156,28 @@ Your addon installations are symlinks pointing to the immutable store.
 
 ```bash
 # Initialize new setup
-aggon-declarative init
+aggon init
 
 # Show planned changes
-aggon-declarative plan
+aggon plan
 
 # Apply configuration
-aggon-declarative switch
+aggon switch
 
 # Test without applying
-aggon-declarative test
+aggon test
 
 # Rollback to previous generation
-aggon-declarative rollback
+aggon rollback
 
 # List all generations
-aggon-declarative generations list
+aggon generations list
 
 # Rollback to specific generation
-aggon-declarative rollback 5
+aggon rollback 5
 
 # Get help
-aggon-declarative help
+aggon help
 ```
 
 ---
@@ -351,7 +351,7 @@ Global system settings:
 1. **Initialize v2 configuration:**
 
     ```bash
-    ./aggon-declarative.exe init
+    ./aggon.exe init
     ```
 
 2. **Convert your v1 config manually:**
@@ -363,12 +363,12 @@ Global system settings:
 3. **Test the configuration:**
 
     ```bash
-    ./aggon-declarative.exe plan
+    ./aggon.exe plan
     ```
 
 4. **Apply when ready:**
     ```bash
-    ./aggon-declarative.exe switch
+    ./aggon.exe switch
     ```
 
 ### From Manual Management
@@ -386,7 +386,7 @@ Global system settings:
 
 3. **Test before applying:**
     ```bash
-    ./aggon-declarative.exe plan
+    ./aggon.exe plan
     ```
 
 ---
@@ -397,26 +397,26 @@ Global system settings:
 
 ```bash
 # Switch to development profile
-aggon-declarative switch --profile development
+aggon switch --profile development
 
 # Apply specific profile
-aggon-declarative switch --profile full
+aggon switch --profile full
 ```
 
 ### Generation Management
 
 ```bash
 # List all generations
-aggon-declarative generations list
+aggon generations list
 
 # View specific generation
-aggon-declarative generations show 5
+aggon generations show 5
 
 # Rollback to generation 3
-aggon-declarative rollback 3
+aggon rollback 3
 
 # Clean up old generations (keep last 5)
-aggon-declarative gc --keep 5
+aggon gc --keep 5
 ```
 
 ### Hash Pinning for Reproducibility
@@ -461,12 +461,12 @@ aggon-declarative gc --keep 5
 #### "Hash mismatch"
 
 -   **Cause**: Addon content changed or corrupted
--   **Solution**: Clear store and re-download: `aggon-declarative gc --force`
+-   **Solution**: Clear store and re-download: `aggon gc --force`
 
 #### "Generation not found"
 
 -   **Cause**: Generation was deleted or corrupted
--   **Solution**: Check available generations: `aggon-declarative generations list`
+-   **Solution**: Check available generations: `aggon generations list`
 
 #### "Configuration parse error"
 
@@ -479,10 +479,10 @@ aggon-declarative gc --keep 5
 
 ```bash
 # Rollback to last working generation
-aggon-declarative rollback
+aggon rollback
 
 # Or rollback to specific generation
-aggon-declarative rollback 5
+aggon rollback 5
 ```
 
 #### Corrupted Store
@@ -490,7 +490,7 @@ aggon-declarative rollback 5
 ```bash
 # Clear store and rebuild
 rm -rf .aggon/store
-aggon-declarative switch
+aggon switch
 ```
 
 #### Reset Everything
@@ -498,7 +498,7 @@ aggon-declarative switch
 ```bash
 # Nuclear option - complete reset
 rm -rf .aggon
-aggon-declarative init
+aggon init
 # Reconfigure and switch
 ```
 
@@ -510,10 +510,10 @@ aggon-declarative init
 
 ```bash
 # Enable verbose logging
-aggon-declarative switch --verbose
+aggon switch --verbose
 
 # Debug mode
-aggon-declarative plan --debug
+aggon plan --debug
 ```
 
 ### Log Files
@@ -544,7 +544,7 @@ aggon-declarative plan --debug
 
 ### Configuration Management
 
--   ✅ Use version control for your `aggon-declarative.json`
+-   ✅ Use version control for your `aggon.json`
 -   ✅ Pin addon versions for stability
 -   ✅ Use profiles for different environments
 -   ✅ Document changes in commit messages
@@ -573,7 +573,7 @@ aggon-declarative plan --debug
 git clone <repo>
 cd aggon
 git checkout declarative-v2
-go build -o aggon-declarative.exe main-declarative.go types.go store.go generations.go reconcile.go
+go build -o aggon.exe main.go types.go store.go generations.go reconcile.go
 ```
 
 ### Running Tests
